@@ -17,6 +17,7 @@
     <maven.compiler.target>15</maven.compiler.target>
   </properties>
 
+<!--  коммент для добавления в пулл реквест 4 дз-->
   <build>
     <plugins>
       <!--   maven-surefire-plugin - плагин который запускает тесты и генерирует отчёты по результатам их выполнения.
