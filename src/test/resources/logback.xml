@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%t]  %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
+
+
+        <!-- P.S. Почитайте подродрнее про уровни логирования и их вложенность. И попробуйте разные варианты -->
+        <!--	Level Name		TRACE	DEBUG	INFO	WARN	ERROR	FATAL	OFF
+                                🠋		🠋		🠋		🠋		🠋		🠋		|
+                                |=======|=======|=======|=======|=======|======>|			-->
