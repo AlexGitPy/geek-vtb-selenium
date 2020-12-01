@@ -49,6 +49,47 @@ public class OzonMarketTest {
     }
 
     @Test
+    public void emptyPhoneFieldError() {
+        ozonMarketMainPage.goToSecondFrame();
+        ozonMarketMainPage.clickTheGetCodeButton();
+        String error = ozonMarketMainPage.getEmptyPhoneFieldError();
+        Assert.assertEquals("Заполните телефон", error);
+
+    }
+
+    @Test
+    public void incorrectFormatPhoneError() {
+        ozonMarketMainPage.goToSecondFrame();
+        ozonMarketMainPage.sendPhoneNumber("888 888 88 88");
+        ozonMarketMainPage.clickTheGetCodeButton();
+        String error = ozonMarketMainPage.getIncorrectFormatPhoneError();
+        Assert.assertEquals("Некорректный формат телефона", error);
+    }
+
+    @Test
+    public void emptyMailFieldError() {
+        ozonMarketMainPage.goToSecondFrame();
+        ozonMarketMainPage.clickTheLogInByMailButton();
+        By mailField = By.xpath("//input[@name='email']");
+        if (driver.findElement(mailField).isDisplayed()) {
+            ozonMarketMainPage.clickTheGetCodeButton();
+        }
+        String error = ozonMarketMainPage.getEmptyMailFieldError();
+        Assert.assertEquals("Заполните почту", error);
+    }
+
+    @Test
+    public void incorrectFormatMailError() {
+        ozonMarketMainPage.goToSecondFrame();
+        ozonMarketMainPage.clickTheLogInByMailButton();
+        ozonMarketMainPage.sendMail("kek");
+        ozonMarketMainPage.clickTheGetCodeButton();
+        String error = ozonMarketMainPage.getIncorrectFormatMailError();
+        Assert.assertEquals("Некорректный формат почты", error);
+        ozonMarketMainPage.clickBackToTheMainPageButton();
+    }
+
+    @Test
     public void goToOrders() {
         By orders = By.xpath("//span[text()='Заказы']");
         driver.findElement(orders).click();
