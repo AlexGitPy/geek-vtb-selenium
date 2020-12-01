@@ -52,3 +52,6 @@ public class BasketPageTest {
         driver.quit();
     }
 }
+
+
+//lesson6

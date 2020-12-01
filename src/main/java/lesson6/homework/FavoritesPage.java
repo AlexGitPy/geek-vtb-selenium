@@ -19,3 +19,5 @@ public class FavoritesPage {
 
 
 }
+
+//lesson6

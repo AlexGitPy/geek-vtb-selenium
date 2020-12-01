@@ -63,3 +63,5 @@ public class RefrigeratorsPage {
         return new RefrigeratorsPage(driver);
     }
 }
+
+//lesson6
