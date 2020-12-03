@@ -49,3 +49,6 @@ public class FavoritesPageTest {
         driver.quit();
     }
 }
+
+
+//lesson6
