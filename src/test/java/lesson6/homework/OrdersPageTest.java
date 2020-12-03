@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class OrdersPageTest {
 
     private static final String MAIN_URL = "https://www.ozon.ru/";
-
+//
     private static WebDriver driver;
 
     private static MainPage mainPage;
@@ -57,4 +57,4 @@ public class OrdersPageTest {
 }
 
 
-//lesson6
+//lesson7
