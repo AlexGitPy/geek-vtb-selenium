@@ -2,10 +2,7 @@ package lesson6.homework;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,12 +30,17 @@ public class MainPageTest {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        driver.get(MAIN_URL);
-
         mainPage = new MainPage(driver);
 
         refrigeratorsPage = new RefrigeratorsPage(driver);
 
+        driver.manage().deleteAllCookies();
+
+    }
+
+    @BeforeEach
+    public void open() {
+        driver.get(MAIN_URL);
     }
 
     @Test
@@ -89,6 +91,7 @@ public class MainPageTest {
         Assert.assertEquals("Некорректный формат почты", error);
         mainPage.clickBackToTheMainPageButton();
     }
+
 
     @AfterAll
     public static void tearDown(){

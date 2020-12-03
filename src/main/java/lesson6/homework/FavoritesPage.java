@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class FavoritesPage {
-
+//
     private final WebDriver driver;
 
     public FavoritesPage(WebDriver driver) {

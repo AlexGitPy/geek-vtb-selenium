@@ -71,7 +71,7 @@ public class MainPage {
         driver.findElement(favorites).click();
         return new FavoritesPage(driver);
     }
-
+//
     public BasketPage goToBasket() {
         driver.findElement(basket).click();
         return new BasketPage(driver);

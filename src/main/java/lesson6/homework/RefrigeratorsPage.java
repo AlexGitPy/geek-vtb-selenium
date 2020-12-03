@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class RefrigeratorsPage {
-
+//
     /*
     Бесполезный класс, потому, что к дом ничего не прикреплено, не подходит для автоматизации
      */

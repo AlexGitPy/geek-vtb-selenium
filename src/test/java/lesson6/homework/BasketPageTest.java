@@ -5,18 +5,25 @@ import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+
 public class BasketPageTest {
+
 
     private static final String MAIN_URL = "https://www.ozon.ru/";
 
     private static WebDriver driver;
 
     private static MainPage mainPage;
+
+
+
 
     @BeforeAll
     public static void setUp() {
@@ -25,13 +32,19 @@ public class BasketPageTest {
 
         driver = new ChromeDriver();
 
+        mainPage = new MainPage(driver);
+
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         driver.get(MAIN_URL);
 
-        mainPage = new MainPage(driver);
+
+        Set<Cookie> cookies = driver.manage().getCookies();
+        System.out.println("cookies -> " + cookies);
+
+        driver.manage().deleteAllCookies();
 
     }
 
@@ -44,6 +57,10 @@ public class BasketPageTest {
                 "Если в корзине были товары –\n" +
                 "войдите\n" +
                 ", чтобы посмотреть список.", warning);
+        Set<Cookie> cookies = driver.manage().getCookies();
+        System.out.println("cookies -> " + cookies);
+        Cookie nlbi_1101384 = driver.manage().getCookieNamed("nlbi_1101384");
+        System.out.println("nlbi_1101384 -> " + nlbi_1101384);
     }
 
 
@@ -53,5 +70,3 @@ public class BasketPageTest {
     }
 }
 
-
-//lesson6
